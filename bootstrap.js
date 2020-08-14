@@ -43,5 +43,8 @@ module.exports = {
 
     packages: require('./app/packages'),
 
-    appIntercept: app => app
+    appIntercept: app => {
+        app.use('/', (req, res)=> res.send("It works") );
+        return app;
+    }
 }

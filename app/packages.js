@@ -6,5 +6,6 @@ module.exports = {
     mongooseSequence: "mongoose-sequence",
     bcrypt: "bcryptjs",
     jwt: "jsonwebtoken",
-    mongooseDelete: "mongoose-delete"
+    mongooseDelete: "mongoose-delete",
+    mongoose: "mongoose"
 }
