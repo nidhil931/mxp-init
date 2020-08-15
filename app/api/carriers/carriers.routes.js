@@ -1,6 +1,6 @@
 const {middlewares} = mxp;
 
-module.exports = shipper => {
+module.exports = carrier => {
     return {
         routes: [
             {

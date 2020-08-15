@@ -20,7 +20,7 @@ module.exports = {
         }catch(err) {
             console.log(err);
             return Promise.reject({
-                message: "error at filterObject"
+                message: err.message || "error at filterObject"
             })
         }
         

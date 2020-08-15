@@ -15,7 +15,7 @@
     "mongoose": "^5.9.27",
     "mongoose-delete": "^0.5.2",
     "mongoose-sequence": "^5.2.2",
-    "mxp-rest-engine": "^1.0.13"
+    "mxp-rest-engine": "^1.0.17"
   },
   "devDependencies": {},
   "scripts": {
