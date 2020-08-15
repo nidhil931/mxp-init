@@ -2,6 +2,7 @@ module.exports = {
     options: {
         url: mxp.config.mongoUrl,
         useNewUrlParser: true,
+        useUnifiedTopology: true, 
         plugins: [
             [require('mongoose-delete'), {overrideMethods: 'all'}],
             schema => {

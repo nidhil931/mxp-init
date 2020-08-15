@@ -112,6 +112,7 @@ module.exports = {
     },
 
     register: req => {
+        
         return filterObject(req.body, ['firstName', 'lastName', 'email', 'password'], true, doc => {
             if (!(doc.firstName && doc.email && doc.password)) {
                 return Promise.reject({
@@ -131,13 +132,19 @@ module.exports = {
                 })
             }
             const {firstName, lastName, email, password} = doc;
-
-            const newUser = new models.user({
-                firstName, lastName, email, password
-            });
-            newUser.hashPassword();
-            console.log(newUser);
-            return  newUser.save();
+            if(mxp.packages.emailValidator.validate(doc.email)) {
+                const newUser = new models.user({
+                    firstName, lastName, email, password
+                });
+                newUser.hashPassword();
+                return  newUser.save();
+            }else{
+                return Promise.reject({
+                    status: 400,
+                    message: 'Invalid email format'
+                })
+            }
+           
          })
          .then(user => {
              return Promise.resolve({

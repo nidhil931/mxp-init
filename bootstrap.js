@@ -7,7 +7,9 @@ module.exports = {
 
     before: [
         cors({ credentials: true }),
-        errorlog
+        errorlog,
+        bodyParser.urlencoded({ extended: true }),
+        bodyParser.json()
     ],
     apiGroups: [
 
@@ -15,8 +17,7 @@ module.exports = {
             path: '/api/v1',
             name: 'version 1',
             before: [
-                bodyParser.urlencoded({ limit: "50mb", extended: true }),
-                bodyParser.json({ limit: "50mb" })
+                
             ],
             apiGroupModule: 'api'
         }
